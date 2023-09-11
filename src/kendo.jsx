@@ -766,7 +766,7 @@ const Kendo =()=>{
 
         </div>
         <div>
-          <div>
+          <div >
             <div>
               <h2 className="div-head">Professional Summary</h2>
             </div>
