@@ -21,6 +21,8 @@ import Hobbiess from "./Hobbiess";
 import Dataa from "./Dataa";
 import Skill from "./skill";
 import Kendo from "./kendo";
+import PhoneNumberInput from "./PhoneNumberInput"
+// import Progressbar from "./Progressbar";
 
 
 const App=()=>{
@@ -51,6 +53,8 @@ const App=()=>{
             <Route path="/extra" element={<Extracurricular></Extracurricular>}></Route>
             <Route path="/profile" element={<PhotoUpload></PhotoUpload>}></Route>
             <Route path="/Ttgig" element={<Ttgig></Ttgig>}></Route>
+            <Route path="PhoneNumberInput" element={<PhoneNumberInput></PhoneNumberInput>}></Route>
+            {/* <Route path="Progressbar" element ={<Progressbar></Progressbar>}></Route> */}
 
 
              

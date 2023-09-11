@@ -1,4 +1,5 @@
-import React,{useState , useRef} from "react";
+import React,{useState , useRef,useEffect} from "react";
+//import PhoneNumberInput from './PhoneNumberInput';
 import { PDFExport, savePDF } from "@progress/kendo-react-pdf";
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -12,6 +13,13 @@ import Dropzone from 'react-dropzone';
 import { GoPerson } from 'react-icons/go';
 import { format } from 'date-fns';
 import { AiFillDelete } from 'react-icons/ai';
+import { Link } from "react-router-dom";
+import 'react-phone-number-input/style.css'; // Import the CSS
+
+import PhoneInput from 'react-phone-number-input';
+
+
+
 
 // const ddData = [
 //   { text: "A4", value: "size-a4" },
@@ -64,7 +72,6 @@ const Kendo =()=>{
     setSelectedDate(date);
   };
   
-
   const [firstname, setfirstname] = useState('')
   const [name, setname] = useState('')
   const [lastname, setlastname] = useState("")
@@ -178,9 +185,9 @@ const Kendo =()=>{
 
   }
 
-  const handlechange4 = (e) => {
+  const handlechange4 = (value) => {
 
-    setphone(e.target.value)
+    setphone(value)
 
   }
   const handlechange5 = (e) => {
@@ -572,6 +579,16 @@ const Kendo =()=>{
     }
 
   };
+  
+  const uniqueSkills = new Set();
+  // Filter the skill array to keep only unique items
+  const uniqueSkillArray = skill.filter((object) => {
+    if (!uniqueSkills.has(object.input1)) {
+      uniqueSkills.add(object.input1);
+      return true;
+    }
+    return false;
+  });
 
   return(
     <div>
@@ -581,8 +598,11 @@ const Kendo =()=>{
         <div>
           
           <div><button className="p-but">100%</button></div>
-          <div className="progresss"></div>
-          <h2>Personal Details</h2>
+          <div className="progresss">
+      
+          </div>
+
+          <h2 className="div-head">Personal Details</h2>
           <div className="job-title">
             <div className="wanted">
               <div className="job">
@@ -665,10 +685,20 @@ const Kendo =()=>{
               </div>
             </div>
             <div className="photo">
-              <label htmlFor="">Phone</label> <br />
-              <input type="number" className="work" value={phone} onChange={handlechange4} />
-            </div>
 
+           <label htmlFor="">Phone</label> <br />
+           <div >
+            {/* <input type="number"  className="work" value={phone} onChange={handlechange4} /> */}
+           {/* <PhoneNumberInput  className="work"  value={phone} onChange={handlechange4}/> */}
+           <PhoneInput 
+        className="work"
+        id="phone-id"
+        value={phone}
+        onChange={handlechange4}
+      />
+           </div>
+           
+           </div>
 
           </div>
           <div className="job-title">
@@ -730,18 +760,18 @@ const Kendo =()=>{
             </div>
 
           </div>
-          <div className="edit">
-            <h5  onClick={() => setdisplay(!display)}>Edit additional details  <IoIosArrowUp /></h5>
+          <div >
+            <h5 className="edit" onClick={() => setdisplay(!display)}>Edit additional details  </h5>
           </div>
 
         </div>
         <div>
           <div>
             <div>
-              <h2>Professional Summary</h2>
+              <h2 className="div-head">Professional Summary</h2>
             </div>
             <div>
-              <p>Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills.</p>
+              <p className="content-color">Write 2-4 short & energetic sentences to interest the reader! Mention your role, experience & most importantly - your biggest achievements, best qualities and skills.</p>
             </div>
             <div>
               <div>
@@ -773,10 +803,10 @@ const Kendo =()=>{
         </div>
         <div>
           <div>
-            <h2>Employment History</h2>
+            <h2 className="div-head">Employment History</h2>
           </div>
           <div>
-            <p>Show your relevent experince (last 10 years). use bullet points to note your achievements, if possible- <br /> use numbers/facts(Achieved X, measured by Y, by doing Z)</p>
+            <p className="content-color"> Show your relevent experince (last 10 years). use bullet points to note your achievements, if possible- <br /> use numbers/facts(Achieved X, measured by Y, by doing Z)</p>
           </div>
           <div>
 
@@ -852,8 +882,7 @@ const Kendo =()=>{
                       <div >
                         <label htmlFor="">Description</label> <br />
                         <textarea name="" id="" cols="85" rows="10" value={object.input5} onChange={(e) => handleInputChange(e, object.id, 'input5')}
-                              placeholder='e.g. Created and implemented lesson plans based on child-led
-               interests and curiosities' className="paradiv"/>
+                              className="paradiv"/>
                
                       </div>
                     </div>
@@ -876,10 +905,10 @@ const Kendo =()=>{
         </div>
         <div>
           <div>
-            <h2>Education</h2>
+            <h2 className="div-head">Education</h2>
           </div>
           <div>
-            <p>A varied education on your resume sums up the value that
+            <p className="content-color">A varied education on your resume sums up the value that
               your learnings and background will bring to job
             </p>
           </div>
@@ -949,7 +978,7 @@ const Kendo =()=>{
                       <div>
                         <label htmlFor="">Description</label> <br />
                         <textarea name="" id="" cols="85" rows="10" value={object.input5} onChange={(e) => handleInputedu(e, object.id, 'input5')}
-                          placeholder='e.g. Graduated with High Honors.' />
+                           />
                       </div>
                     </div>
 
@@ -968,10 +997,10 @@ const Kendo =()=>{
         </div>
         <div>
           <div>
-            <h2> Websites & Social Links</h2>
+            <h2 className="div-head"> Websites & Social Links</h2>
           </div>
           <div>
-            <p>You can add links to websites you want hiring managers to see! Perhaps it will be
+            <p className="content-color">You can add links to websites you want hiring managers to see! Perhaps it will be
               a link to your portfolio,LinkedIn profile or personal website</p>
           </div>
           <div>
@@ -1019,10 +1048,10 @@ const Kendo =()=>{
         </div>
         <div>
           <div>
-            <h2> Skills</h2>
+            <h2 className="div-head"> Skills</h2>
           </div>
           <div>
-            <p>
+            <p className="content-color">
               Choose 5 important skills that show you fit the position. Make sure they match
               the key skills mentioned in the job listing(especially when applying via an online system)
             </p>
@@ -1523,7 +1552,7 @@ interests and curiosities'/>
                 margin="2cm"
                 ref={pdfExportComponent}
                 keepTogether="p"
-                margin={{ top: 20, left: 10, right: 5, bottom: 20 }}
+                margin={{ top: 20, left: 10, right: 5, bottom: 10 }}
               >
 <div className="resume">
 <div className="two-one">
@@ -1609,10 +1638,10 @@ interests and curiosities'/>
 
 {
 date === "" ? <span></span> : <div>
-<h5 className="dob2">Date of Birth</h5>
+<h5 className="dob2">Date / Place of Birth</h5>
 {/* <p className="font" id="place">{date}</p> */}
 <div className="font">
-  {`${date},${birth}`}
+  {`${date} / ${birth}`}
 </div>
 </div>
 }
@@ -1651,10 +1680,29 @@ emp === "" ? <span></span> : <h3 id="emp-history">Employment History</h3>
 {objects.map((object) => (
 <div key={object.id}>
 
-<h5 className="inps">{`${object.input1} at ${object.input2} , ${object.input3}`}</h5>
+<h5 className="inps">{`${object.input1} at ${object.input2}, ${object.input3}`}</h5>
 {/* { <h5 className="inpss">{`${object.input4}  ${object.input6}`}</h5> } */}
-<span className="dd">{object.input4}</span>
+{/* {
+  object.input4 && object.input5  !== "" ? <div>
+     <span className="dd">{object.input4}</span>
 <span className="dd1">{object.input6}</span>
+  </div> : <span></span>
+} */}
+
+
+{/* {
+  object.input4 === "" ? <span></span> : object.input5 === "" ? <span></span> : <div>
+  <span className="dd">{object.input4}</span>
+<span className="dd1">{object.input6}</span>
+</div>
+} */}
+{
+  object.input4 === "" ? <span></span> : object.input6 === "" ? <span></span> : <div>
+    <span className="dd">{object.input4}</span>
+<span className="dd1">{object.input6}</span>
+  </div>
+}
+
 
 
 <h6 className="inpsss">{object.input5}</h6>
@@ -1664,15 +1712,25 @@ emp === "" ? <span></span> : <h3 id="emp-history">Employment History</h3>
 </div>
 <div className="obj">
 {
-education   === undefined ? <span></span> : <h3 className="emp-history">Education</h3>
+education   === "" ? <span></span> : <h3 className="emp-history">Education</h3>
 }
 
 {education.map((object) => (
 <div key={object.id}>
 
 <h5 className="inps">{`${object.input2} , ${object.input1} , ${object.input3}`}</h5>
-<span className="dd">{object.input4}</span>
+{
+  object.input4 === "" ? <span></span> : object.input6 === "" ? <span></span> : <div>
+    <span className="dd">{object.input4}</span>
 <span className="dd1">{object.input6}</span>
+  </div>
+}
+
+
+{/* <span className="dd">{object.input4}</span>
+<span className="dd1">{object.input6}</span> */}
+
+
 <h6 className="inpsss">{object.input5}</h6>
 
 <div className="messs" dangerouslySetInnerHTML={{ __html: editorEdu }} />
@@ -1713,7 +1771,8 @@ site === "" ? <span></span> :   <div>
 {website.map((object) => (
 <div key={object.id} style={{display:"flex"}} className="in">
 
-<p className="inpo">{object.input1}</p>
+{/* <p className="inpo">{object.input1}</p> */}
+<Link to={object.input2} className="inpo">{object.input1}</Link>
 
 
 </div>
@@ -1721,17 +1780,42 @@ site === "" ? <span></span> :   <div>
 </div>
 </div>
 }
-{
+{/* {
 ill === "" ? <span></span> :
 <div className="inputt">
-<h2 className="skil">Skills</h2>
+ <h2 className="skil">Skill</h2>
 {skill.map((object) => (  
 <div key={object.id}>
-<p className="inpo">{`${object.input1}---${object.input2}/5`}</p>
+ 
+  <div style={{display:"flex"}}>
+    <p className="inpo">{object.input1}</p>
+    {
+      object.input2 === "" ? <span></span> : <p className="inpo">---{`${object.input2}/5`}</p>
+    }
+
+  </div>
+  
+   
+  
+
 </div>
 ))}
 </div>
-}
+} */}
+ {
+  ill === "" ? <span></span> :
+  <div className="inputt">
+      <h2 className="skil">Skill</h2>
+      {uniqueSkillArray.map((object) => (
+        <div key={object.id}>
+          <div style={{ display: "flex" }}>
+            <p className="inpo">{object.input1}</p>
+            {object.input2 === "" ? <span></span> : <p className="inpo">---{`${object.input2}/5`}</p>}
+          </div>
+        </div>
+      ))}
+    </div>
+    }
 {
 orse === ""? <span></span> : <div>
 

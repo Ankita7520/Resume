@@ -412,6 +412,7 @@ text-align: left;
     margin-left: 5%;
     
     width: 10vw;
+    
   }
   .pic{
     position: relative;
@@ -451,10 +452,12 @@ text-align: left;
   }
   .edit{
     cursor: pointer;
+    font-size: 14px;
   }
   .one{
     width: 50%;
     margin-left: 3%;
+    
     /* margin-top: 10%; */
   }
   .wanted{
@@ -475,12 +478,13 @@ text-align: left;
     border: none;
     outline: none;
     background-color: #dde5ee;
+    font-size: 14px;
     margin-bottom: 5px;
     border-radius: 5px;
     padding-right: 0;
   }
   .work:hover{
-    border-bottom: 2px solid #c3e5fe;
+    border-bottom: 2px solid #dec3fe;
   }
   /* .emp-main{
     border: 1px solid rgb(218, 53, 53);
@@ -498,7 +502,7 @@ text-align: left;
     height: auto;
     background-color: rgb(77, 77, 104);
     text-align: center;
-     
+    
     
     width: 50%; 
     min-height: 90%;
@@ -509,6 +513,7 @@ text-align: left;
     background-color:white;
     width: 100%;
     overflow:scroll;
+    
     
    
     /* height: 600px; */
@@ -538,7 +543,7 @@ text-align: left;
    
   }
   .two-one1{
-    height: 35vh;
+    height: 38vh;
     border-bottom: 1px solid rgb(235, 230, 230);
     /* background-color: #0f3871; */
    
@@ -566,9 +571,10 @@ text-align: left;
   .paragh{
     width: 88%;
      height: 20vh; 
-    
+    font-size: 18px;
     margin-bottom: 10%;
     background-color: none;
+    color: black;
     font-size: 11px;
   }
   .pa{
@@ -580,10 +586,10 @@ text-align: left;
     /* position: relative;
     left: 2px;
     bottom: 50px; */
-    margin-top: 15%;
-    margin-left: -50%;
-    width: 145%;
-    height: 170%;
+    margin-top: 16%;
+    margin-left: -54%;
+    width: 149%;
+    height: 27vh;
     display: flex;
     flex-wrap: wrap;
     /* height: fit-content; */
@@ -598,15 +604,17 @@ text-align: left;
     margin-top: 0%;
   }
   .mess{
-    width: 90%;
+    width: 85%;
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
     /* margin-top: 4%; */
-    margin-top: 1%;
-    margin-left: 5%;
+    margin-top: 3%;
+    margin-left: 8%;
     border-radius: 5px;
-    text-align: justify;
+    text-align:justify ;
+    height: 16vh;
+    
     
     
   } */
@@ -653,6 +661,7 @@ text-align: left;
     }
   .bold{
     font-size: 1.8em;
+    margin-top: 14%;
    
     
   
@@ -709,7 +718,7 @@ text-align: left;
     color:white;
     margin-bottom: 0%;
     margin-top: -2%;
-    margin-left: 1%;
+    margin-left: .5%;
     font-size: 14px;
   }
   .inpss{
@@ -721,8 +730,8 @@ text-align: left;
    
   }
   .inpsss{
-    margin-top: -1%;
-    margin-left: 1%;
+    margin-top: 1%;
+    margin-left: .5%;
     text-align: justify;
     font-size: 12px;
     font-weight: 400;
@@ -741,7 +750,7 @@ text-align: left;
     margin-left: 5%;
     color: rgb(25, 21, 21);
     border-radius: 10px;
-    margin-top: 26%;
+    margin-top: 24%;
     margin-bottom: -15%;
     text-align: left;
    
@@ -766,10 +775,10 @@ text-align: left;
   .cour{
     margin-bottom: 0%;
   
-    margin-left: 17%;
+    margin-left: 15%;
    
     width: 100%;
-    font-size: 11px;
+    font-size: 12px;
     margin-top: 0%;
   }
   .in{
@@ -786,18 +795,18 @@ text-align: left;
   }
   .courr{
    
-    margin-left: 18%;
+    margin-left: 15%;
     margin-bottom: 0%;
     width: 100%;
-    font-size: 11px;
+    font-size: 12px;
     margin-top: 0%;
 
   }
   .the{
     margin-bottom: 0%;
-    margin-left: 20%;
+    margin-left: 15%;
     width: 100%;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 0%;
   }
   .thee{
@@ -808,8 +817,20 @@ text-align: left;
     font-size: 10px;
   }
   #work-id{
+    width: 10vw;
+    display: flex;
+    
+  }
+  #phone-id{
     width: 9vw;
     display: flex;
+    width: 20vw;
+    height: 6vh;
+    border: none;
+    outline: none;
+    background-color:transparent !important;
+    font-size: 14px;
+    
   }
   #work-id2{
     width: 10vw;
@@ -905,23 +926,24 @@ text-align: left;
   }
  .tact{
   margin-bottom:0% ;
-  margin-top: 2.7%;
+  margin-top: 4%;
   margin-right: 75%;
   font-size: 12px;
  }
  .dob2{
-  margin-top: -2%;
+  margin-top: 5%;
   margin-bottom:0% ;
   font-size: 12px;
-  margin-top: 0%;
-  margin-left: -54%;
+  margin-top: .5%;
+  margin-left: -32%;
  }
  #work-id3{
   width: 9vw;
  
  }
  #work-id4{
-  width: 10vw;
+  width: 9vw;
+ 
   position: relative;
   right: 10px;
  }
@@ -937,12 +959,12 @@ text-align: left;
   font-weight: bold;
   margin-top: 0%;
   margin-bottom: 2%;
-  margin-left: 1%;
+  margin-left: .5%;
   font-size: 12px;
    
  }
  .add{
-  margin-top: 2.7%;
+  margin-top: 3%;
   margin-bottom: 0%;
   font-size: 12px;
   margin-right: 75%;
@@ -956,7 +978,7 @@ text-align: left;
   background-color: white;
   color:#1A91F0;
   border: none;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: bolder;
   
  }
@@ -965,6 +987,8 @@ text-align: left;
   border: none;
   padding-bottom: 2%;
   padding-right: 20%;
+  font-size: 14px;
+  
  
  }
 #intern-btn{
@@ -977,14 +1001,14 @@ text-align: left;
  left: 6%;
 }
 .drive{
-  margin-top: 2%;
+  margin-top: 4%;
   margin-bottom: 0%;
   font-size: 12px;
   margin-left: -49%;
 }
 #drive-id{
   margin-bottom: 2%;
-  margin-left: 2%;
+  margin-left: .5%;
 }
 .delete{
   
@@ -998,6 +1022,10 @@ text-align: left;
 }
 .p-content{
   color: rgb(106, 106, 137);
+  font-size: 13px;
+  position: relative;
+  bottom: 15px;
+  margin-bottom: 0%;
 
 }
 .project9{
@@ -1037,10 +1065,35 @@ text-align: left;
 }
 #emp-history{
   font-size: 16px;
+  margin-left: 0%;
 }
 .emp-history{
   font-size: 16px;
+  margin-left: 0%;
 }
 #photo-border{
   border: none;
+  
+}
+.content-color{
+ 
+  color:#828BA2 ;
+  font-size: 13px;
+}
+/* #work-id{
+  width: 30vw;
+  margin-left: 5;
+  background-color: #0d3087;
+  height:6vh;
+  background-color: #dde5ee;
+} */
+.photo{
+  width: 30vw;
+  margin-left: 7%;
+}
+.backgr{
+   background-color: #dde5ee;
+}
+.div-head{
+  font-size: 18px;
 }
