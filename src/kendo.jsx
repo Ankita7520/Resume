@@ -760,7 +760,7 @@ const Kendo =()=>{
             </div>
 
           </div>
-          <div >
+          <div>
             <h5 className="edit" onClick={() => setdisplay(!display)}>Edit additional details  </h5>
           </div>
 
